@@ -42,5 +42,35 @@ public class Main {
       System.out.println( table[finalIndex]); // table[2] -> "Aaniyah"
       System.out.println ( table[table.length-1] ); //same as above
 
+      // *** 4.4: TRAVERSING ARRAY
+      double[] scores = {75.0,89.7,85.54,93.0};
+      // look at one item using an index
+      System.out.println(scores[2]);
+      //use a STANDARD FOR LOOP to iterate through EVERY item
+      for ( int i = 0; i < 4; i++ ){
+         System.out.println( "Current item:" + scores[i]);
+      }
+      // instead of picking the endpoint with a number like 4,
+      //what if we just use the array's length?
+      for (int i = 0; i < scores.length; i++){
+         System.out.println("Current item:" + scores[i]);
+         //"Curve the test scores" -> modify array items
+         scores[i] = scores[i] + 10;
+         System.out.println("Score after curve:" + scores[i]);
+      }
+
+      //SHORTCUT if you only want to "visit" items, not modify
+      //Use an ENHANCED FOR-EACH loop
+      double sum = 0;
+      // "for each individual score in the array of scores"
+      for ( double score : scores) {
+         // don't need [] brackets, index is not relevant here
+         sum += score; // add current item to the sum
+      }
+      System.out.println(sum);
+      double avg = sum / scores.length;
+      System.out.println(avg);
+
+
    }// end main method
 } // end main class
